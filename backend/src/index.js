@@ -10,8 +10,3 @@ app.use(routes);
 app.listen(3333);
 
 
-// cors em produção ficaria assim:
-
-app.use(cors({
-    origin: 'http://meuapp.com' //o endereço que vai poder acessar a aplicação, frontend hospedado
-}));
