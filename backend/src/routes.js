@@ -17,5 +17,7 @@ routes.post('/ongs', OngController.create);
 routes.get('/incidents', IncidentController.index);
 //cadastrar
 routes.post('/incidents', IncidentController.create);
+//deletar
+routes.delete('/incidents/:id', IncidentController.delete);
 
 module.exports = routes; //exportar para usar no index.js
