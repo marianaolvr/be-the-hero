@@ -1,9 +1,7 @@
 const connection = require('../database/connection');
 
 module.exports = {
-
     async index(request, response) {
-
         const { page = 1 } = request.query; //paginação da listagem
 
         const [count] = await connection('incidents') // contador: query que vai retornar a quantidade de casos
@@ -21,9 +19,9 @@ module.exports = {
                 'ongs.whatsapp',
                 'ongs.city',
                 'ongs.uf'
-            ]); 
+            ]);
 
-        response.header('X-Total-Count', count['count(*)']);
+        response.header('X-Total-Incidents', count['count(*)']);
 
         return response.json(incidents);
 
