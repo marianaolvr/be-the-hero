@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+// Link substitui o <a> para não recarregar toda a página SPA
 import { FiLogIn } from 'react-icons/fi';
 
 import './styles.css';
@@ -8,7 +10,6 @@ import heroesImage from '../../assets/heroes.png';
 
 export default function Login() {
     return (
-
         <div className="login-container">
             <section className="form">
 
@@ -19,10 +20,10 @@ export default function Login() {
                     <input placeholder="Sua ID" />
                     <button className="button" type="submit">Entrar</button>
 
-                    <a href="/register">
+                    <Link className="back-link" to="/register">
                         <FiLogIn size={16} color="#E02041"/>
                         Não tenho cadastro
-                    </a>
+                    </Link>
                 </form>
 
 
