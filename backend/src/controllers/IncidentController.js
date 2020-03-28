@@ -1,0 +1,26 @@
+const connection = require('../database/connection');
+
+module.exports = {
+
+    async index(request, response) {
+        const incidents = await connection('incidents').select('*');
+        return response.json(incidents);
+
+    },
+
+    async create(request, response) {
+        const { title, description, value } = request.body;
+        //cabeçalho da requisição, onde fica a autenticação
+        const ong_id = request.headers.authorization;
+
+        const [id] = await connection('incidents').insert({
+            title,
+            description,
+            value,
+            ong_id,
+        });
+
+        return response.json({ id });
+    }
+};
+
