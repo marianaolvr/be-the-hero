@@ -4,19 +4,14 @@ const connection = require('../database/connection');
 module.exports = {
     async create(request, response) {
         const { id } = request.body; //busca o id através do corpo da requisição
-
-        //buscar uma ong do banco de dados
-        const ong = await connection('ongs') 
-        .where('id', id)
-        .select('name')
-        .first(); //para trazer apenas o id
-        //se a ong não existir:
-        if (!ong) {
-            return response.status(400).json ({ error: 'No ONG found whith this id' });
-
+        const ong = await connection('ongs') //buscar uma ong do banco de dados
+            .where('id', id)
+            .select('name')
+            .first(); //para trazer apenas o id
+        
+        if (!ong) { //se a ong não existir:
+            return response.status(400).json({ error: 'No ONG found whith this id' });
         }
-
         return response.json(ong);
-
     }
-}
+};
