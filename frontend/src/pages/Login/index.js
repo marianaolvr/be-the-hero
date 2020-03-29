@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 // Link substitui o <a> para não recarregar toda a página SPA
 import { FiLogIn } from 'react-icons/fi';
