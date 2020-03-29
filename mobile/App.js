@@ -1,19 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+
+//importar as minhas rotas
+import Routes from './src/routes';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      
-    </View>
+    <Routes />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#7159',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
