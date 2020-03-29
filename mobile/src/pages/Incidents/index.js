@@ -10,6 +10,7 @@ import styles from './styles';
 export default function Incidents() {
     const navigation = useNavigation();
 
+    //faz o botão funcionar e manda para a página de Detail
     function navigateToDetail() {
         navigation.navigate('Detail');
     }
