@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import constants from 'expo-constants';
-import Incidents from '.';
+
 
 export default StyleSheet.create({
     container: {
